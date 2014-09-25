@@ -33,12 +33,16 @@ var PeterGenerator = yeoman.generators.Base.extend({
 
   writing: {
     app: function () {
-      this.log(this.props.name);
+      this.dest.mkdir("assets");
+      this.dest.mkdir("assets/images");
+      this.dest.mkdir("assets/styles");
+      this.dest.mkdir("assets/images");
+      this.dest.mkdir("assets/vendors");
       this.src.copy('_gulpfile.js', 'gulpfile.js');
       this.src.copy('_bower.json', 'bower.json');
       this.template('_package.json', 'package.json', this.props);
       this.template('_index.html', 'index.html', this.props);
-      this.src.copy('_master.styl', 'master.styl');
+      this.src.copy('_master.styl', 'assets/styles/master.styl');
     }
   },
 

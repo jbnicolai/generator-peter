@@ -31,7 +31,7 @@ gulp.task('bs-reload', function() {
 });
 
 gulp.task('default', ['stylus', 'browser-sync'], function() {
-  gulp.watch('./**/*.styl', ['stylus']);
-  gulp.watch(['./**/*','!./**/*.styl', '!./**/*.css'], ['bs-reload']);
+  gulp.watch('./assets/styles/*.styl', ['stylus']);
+  gulp.watch(['./**/*', '!./assets/**/*.styl', '!./assets/**/*.css','!./node_modules/**/*'], ['bs-reload']);
 });
 
